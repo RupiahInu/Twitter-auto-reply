@@ -30,6 +30,6 @@ const replyToTweet = tweet => {
 };
 
 setInterval(() => {
-  const tweet = client.get("search/tweets", { q: "#YOUR_HASHTAG -filter:retweets AND -filter:replies", count: "1" })
+  const tweet = client.get("search/tweets", { q: "#giveaways -filter:retweets AND -filter:replies", count: "1" })
     .then(tweet => replyToTweet(tweet.statuses[0]))
 }, 300000);
